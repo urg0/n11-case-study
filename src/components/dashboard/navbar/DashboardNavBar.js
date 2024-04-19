@@ -1,15 +1,26 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { ReactSVG } from "react-svg";
+
+import CookieService from "@utils/cookies.service";
+import { COOKIES } from "@utils/cookies.service";
+import { getIconPath } from "@utils/utils.service";
 
 import { DASHBOARD_NAVIGATION } from "@constants/navigation";
 import DashboardLink from "../link/DashboardLink";
 
 import Logo from "@assets/images/n11-logo.png";
-import { getIconPath } from "@utils/utils.service";
 import styles from "./DashboardNavBar.module.scss";
 
 const DashboardNavBar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    CookieService.removeCookie(COOKIES.AUTH_TOKEN);
+    navigate("/login");
+  };
+
   return (
     <div className={styles.navigationContainer}>
       <div className={styles.logoContainer}>
@@ -30,6 +41,10 @@ const DashboardNavBar = () => {
           </React.Fragment>
         ))}
       </nav>
+      <button className={styles.logoutButton} onClick={handleLogout}>
+        <ReactSVG src={getIconPath("logout")} className={styles.logo} />
+        <span className={styles.label}>Logout</span>
+      </button>
     </div>
   );
 };

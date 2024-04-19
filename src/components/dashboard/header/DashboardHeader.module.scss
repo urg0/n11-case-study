@@ -1,0 +1,21 @@
+.headerContainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid #e2e4e9;
+  .wrapper {
+    display: flex;
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+    .header {
+      font-size: 16px;
+      font-weight: 500;
+      color: #0a0d14;
+    }
+  }
+}

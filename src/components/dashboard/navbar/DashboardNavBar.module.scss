@@ -33,4 +33,34 @@
       margin-bottom: 8px;
     }
   }
+  .logoutButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: inherit;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 4px 0;
+    cursor: pointer;
+    &:hover {
+      .label {
+        color: #df1c41;
+        border-bottom: 1px solid #df1c41;
+      }
+      .logo {
+        fill: #df1c41;
+      }
+    }
+    .logo {
+      fill: #525866;
+    }
+    .label {
+      font-size: 14px;
+      margin-bottom: 2px;
+      margin-left: 4px;
+      margin-right: 16px;
+    }
+  }
 }
