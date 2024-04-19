@@ -3,6 +3,7 @@ import AuthenticatedRoute from "@components/authenticated-route/AuthenticatedRou
 import AuthRedirect from "@components/auth-redirect/AuthRedirect";
 
 import Login from "@pages/auth/login/Login";
+import ErrorPage from "@pages/404/ErrorPage";
 
 export const AppRouter = () => {
   const elements = useRoutes([
@@ -22,7 +23,7 @@ export const AppRouter = () => {
     },
     {
       path: "*", //any other path
-      /* element: <NotFoundPage />, */
+      element: <ErrorPage />,
     },
   ]);
 
