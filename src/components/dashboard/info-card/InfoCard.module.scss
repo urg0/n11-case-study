@@ -1,0 +1,38 @@
+.negative,
+.positive {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(246, 248, 250);
+  border-radius: 16px;
+  padding: 12px 64px;
+  margin: 12px;
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0a0d14;
+    margin-bottom: 2px;
+  }
+  .amount {
+    margin-bottom: 2px;
+    font-size: 15px;
+  }
+  .change {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}
+.positive {
+  border: 1px solid rgb(227, 249, 193);
+  .change {
+    color: #3bdf1c;
+  }
+}
+.negative {
+  border: 1px solid #ffc5d0;
+  .change {
+    color: #df1c41;
+  }
+}
