@@ -6,6 +6,7 @@ const aliasMap = {
   "@config": "src/config",
   "@constants": "src/constants",
   "@hooks": "src/hooks",
+  "@layouts": "src/layouts",
   "@network": "src/network",
   "@pages": "src/pages",
   "@services": "src/services",

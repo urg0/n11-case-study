@@ -34,7 +34,7 @@ const Login = () => {
     }),
     onSubmit: () => {
       CookieService.setCookie(COOKIES.AUTH_TOKEN, "your_auth_token_here");
-      navigate("/");
+      navigate("/dashboard");
     },
   });
 

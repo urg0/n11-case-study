@@ -1,0 +1,10 @@
+.dashboardLayoutContainer {
+  width: 100%;
+  display: flex;
+  .footer {
+    width: 100%;
+    align-self: flex-end;
+    padding: 12px 0;
+    background-color: rgb(246, 248, 250);
+  }
+}

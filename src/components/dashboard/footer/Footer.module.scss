@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  .logo {
+    width: 48px;
+    margin-right: 8px;
+  }
+  .year {
+    margin-top: 2px;
+    color: rgb(88, 68, 183);
+    font-weight: 500;
+  }
+}
