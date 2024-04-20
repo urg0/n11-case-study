@@ -28,16 +28,29 @@ export const polarAreaOptions = {
   },
 };
 
-const Chart = ({ type, data, options }) => {
+const Chart = ({ type, data, height, width, options }) => {
   switch (type) {
     case "line":
-      return <Line data={data} options={lineOptions} />;
+      return (
+        <Line data={data} options={lineOptions} height={height} width={width} />
+      );
     case "bar":
-      return <Bar data={data} options={barOptions} />;
+      return (
+        <Bar data={data} options={barOptions} height={height} width={width} />
+      );
     case "pie":
-      return <Pie data={data} options={pieOptions} />;
+      return (
+        <Pie data={data} options={pieOptions} height={height} width={width} />
+      );
     case "polarArea":
-      return <PolarArea data={data} options={polarAreaOptions} />;
+      return (
+        <PolarArea
+          data={data}
+          options={polarAreaOptions}
+          height={height}
+          width={width}
+        />
+      );
     default:
       return null;
   }

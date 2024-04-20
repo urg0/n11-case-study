@@ -25,10 +25,21 @@ const Dashboard = () => {
       </div>
       <div className={styles.chartWrapper}>
         <div className={styles.chartContainer}>
-          <Chart type="line" data={lineChartData} />
-          <Chart type="bar" data={barChartData} />
-          <Chart type="pie" data={pieChartData} />
-          <Chart type="polarArea" data={polarAreaChartData} />
+          <div className={styles.wrapper}>
+            <Chart type="line" data={lineChartData} height={250} width={600} />
+            <div className={styles.flex}>
+              <Chart type="pie" data={pieChartData} height={120} width={180} />
+              <Chart
+                type="polarArea"
+                data={polarAreaChartData}
+                height={200}
+                width={300}
+              />
+            </div>
+          </div>
+        </div>
+        <div className={styles.barChartContainer}>
+          <Chart type="bar" data={barChartData} height={300} width={300} />
         </div>
       </div>
     </DashboardLayout>
