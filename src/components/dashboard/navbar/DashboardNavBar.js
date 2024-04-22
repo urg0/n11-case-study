@@ -23,7 +23,10 @@ const DashboardNavBar = () => {
 
   return (
     <div className={styles.navigationContainer}>
-      <div className={styles.logoContainer}>
+      <div
+        className={styles.logoContainer}
+        onClick={() => navigate("/dashboard")}
+      >
         <img src={Logo} alt="logo" className={styles.logo} />
       </div>
       <nav className={styles.navigationBar}>

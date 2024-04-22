@@ -1,3 +1,11 @@
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .gridTable {
   width: 95%;
   align-self: center;
@@ -57,4 +65,47 @@
     font-weight: 400;
     color: #0a0d14;
   }
+}
+.profileContainer {
+  display: flex;
+  align-items: center;
+}
+
+.paginationContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .paginationButton {
+    background-color: inherit;
+    border: none;
+    margin-right: 8px;
+    font-size: 22px;
+    cursor: pointer;
+    &:hover {
+      color: #6936f5;
+    }
+  }
+}
+.pageNumbers {
+  background-color: inherit;
+  border: none;
+  margin-right: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px;
+  &:hover {
+    color: #6936f5;
+  }
+}
+.activePage {
+  font-size: 16px;
+  background-color: inherit;
+  border: none;
+  color: #6936f5;
+  border: 1px solid #6936f5;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 8px;
 }

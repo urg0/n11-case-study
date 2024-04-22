@@ -5,6 +5,7 @@
   .actions {
     display: flex;
     align-items: center;
+    justify-content: center;
     .searchBar {
       display: flex;
       align-items: center;
@@ -27,8 +28,9 @@
         font-size: 14px;
         line-height: 20px;
         font-weight: 400;
-        margin-top: 6px;
+        padding: 3px;
         width: 100%;
+        background-color: inherit;
         &:focus {
           outline: none;
           background-color: #f3f0f0;

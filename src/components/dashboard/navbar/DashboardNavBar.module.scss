@@ -14,8 +14,12 @@
     justify-content: center;
     margin-top: 30px;
     margin-left: 24px;
+    cursor: pointer;
     .logo {
       width: 64px;
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
   .navigationBar {

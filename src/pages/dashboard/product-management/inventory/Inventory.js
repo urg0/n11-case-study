@@ -1,328 +1,61 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import { useQuery } from "@tanstack/react-query";
 
 import DashboardLayout from "@layouts/dashboard/DashboardLayout";
 import DashboardTable from "@components/dashboard/table/DashboardTable";
+import DashboardActionBar from "@components/dashboard/table/action-bar/DashboardActionBar";
 
-import { getIconPath } from "@utils/utils.service/";
+import { DUMMY_USER_LIST } from "@constants/dummy-data/user-list";
 
-import styles from "./Inventory.module.scss";
-import DashboardActionBar from "../../../../components/dashboard/table/action-bar/DashboardActionBar";
-
-const data = [
-  {
-    tutar: 100000,
-    investorProfile: {
-      /*       profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Finance",
-    projectID: "4",
-    status: "Tamamlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Yayınlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Arda",
-      surname: "Turan",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /*       profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Finance",
-    projectID: "4",
-    status: "Tamamlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Yayınlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Arda",
-      surname: "Turan",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /*       profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Finance",
-    projectID: "4",
-    status: "Tamamlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Yayınlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Arda",
-      surname: "Turan",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /*       profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Finance",
-    projectID: "4",
-    status: "Tamamlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Yayınlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Arda",
-      surname: "Turan",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /*       profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Finance",
-    projectID: "4",
-    status: "Tamamlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Yayınlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Arda",
-      surname: "Turan",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /*       profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Finance",
-    projectID: "4",
-    status: "Tamamlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Ulaş Rotinda",
-      surname: "Güler",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Yayınlandı",
-    createdAt: "02-02-2020",
-  },
-  {
-    tutar: 100000,
-    investorProfile: {
-      /* profilePhoto: Memoji, */
-      name: "Arda",
-      surname: "Turan",
-    },
-    sektör: "Tech",
-    projectID: "2",
-    status: "Bekliyor",
-    createdAt: "02-02-2020",
-  },
-];
+const fetchProjects = async (page, perPage, filter = "") => {
+  const startIndex = (page - 1) * perPage;
+  const endIndex = startIndex + perPage;
+  const filteredData = DUMMY_USER_LIST.filter((application) =>
+    application.investorProfile.name
+      .toLowerCase()
+      .includes(filter.toLowerCase())
+  );
+  return filteredData.slice(startIndex, endIndex);
+};
 
 const Inventory = () => {
   const [searchInput, setSearchInput] = useState("");
+  const [page, setPage] = useState(1);
+  const perPage = 10;
 
-  const filteredApplications = searchInput
-    ? data.filter((application) =>
-        application.investorProfile.name
-          .toLowerCase()
-          .includes(searchInput.toLowerCase())
-      )
-    : data;
+  const { data: projects, isLoading } = useQuery({
+    queryKey: ["projects", page, searchInput],
+    queryFn: () => fetchProjects(page, perPage, searchInput),
+    options: {
+      keepPreviousData: true,
+    },
+  });
+
+  const totalPages = Math.ceil(DUMMY_USER_LIST.length / perPage);
+
+  const handleSearchInput = (e) => {
+    setPage(1);
+    setSearchInput(e.target?.value);
+  };
 
   return (
-    <DashboardLayout header="Inventory" icon={getIconPath("user2")}>
-      <DashboardActionBar setSearchInput={(e) => setSearchInput(e)} />
+    <DashboardLayout header="Inventory">
+      <DashboardActionBar setSearchInput={handleSearchInput} />
       <DashboardTable
-        applications={filteredApplications}
+        applications={projects || []}
         headers={[
-          "Üye",
-          "Başvurduğu Girişim",
-          "Sektör",
-          "Hesap Onayı",
-          "Alışveriş Miktarı",
-          "Üyelik Tarihi",
+          "Customer Name",
+          "Order ID",
+          "Product Category",
+          "Payment Status",
+          "Order Amount",
+          "Order Date",
         ]}
+        page={page}
+        setPage={setPage}
+        totalPages={totalPages}
+        isLoading={isLoading}
       />
     </DashboardLayout>
   );
