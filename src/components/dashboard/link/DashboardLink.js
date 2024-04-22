@@ -9,7 +9,7 @@ const DashboardLink = ({ title, icon, path }) => {
   return (
     <li className={styles.navItem}>
       <NavLink
-        exact
+        end
         to={path}
         className={({ isActive }) =>
           isActive ? styles.active : styles.navLink

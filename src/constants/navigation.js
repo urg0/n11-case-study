@@ -1,63 +1,81 @@
 export const DASHBOARD_NAVIGATION = [
   {
-    title: "Startup",
+    title: "Product Management",
     links: [
       {
-        title: "Startuplar",
+        title: "Inventory",
         /* icon: UserLine.src, */
-        path: "/dashboard",
+        path: "/dashboard/inventory",
       },
       {
-        title: "Yatırımcı Talepleri",
-        /* icon: Smile.src, */
-        path: "/dashboard-new/investments",
-      },
-      {
-        title: "Başvurular",
-        /* icon: ChatSmile.src, */
-        path: "/dashboard/applications",
-      },
-      {
-        title: "GSYF",
-        /* icon: Leaf.src, */
-        path: "/dashboard/gsyf",
-      },
-    ],
-  },
-  {
-    title: "Venture Capital",
-    links: [
-      {
-        title: "VC Group",
-        /* icon: Group.src, */
-        path: "/dashboard/vcGroups",
-        superadmin: true,
-      },
-      {
-        title: "Kapalı Gruplar",
-        /* icon: Lock.src, */
-        path: "/dashboard/vipgroups",
-        superadmin: true,
-      },
-    ],
-  },
-  {
-    title: "Üye İşlemleri",
-    links: [
-      {
-        title: "Üyeler",
+        title: "Categories",
         /* icon: UserLine.src, */
-        path: "/dashboard/users",
+        path: "/dashboard/categories",
+      },
+      {
+        title: "Suppliers",
+        /* icon: UserLine.src, */
+        path: "/dashboard/suppliers",
+      },
+      {
+        title: "Best Sellers",
+        /* icon: UserLine.src, */
+        path: "/dashboard/best-sellers",
       },
     ],
   },
   {
-    title: "Eğitim",
+    title: "Order Management",
     links: [
       {
-        title: "Akademi",
-        /* icon: Flashlight.src, */
-        path: "/dashboard/academy",
+        title: "Recent Orders",
+        /* icon: UserLine.src, */
+        path: "/dashboard/recent-orders",
+      },
+      {
+        title: "Returns",
+        /* icon: UserLine.src, */
+        path: "/dashboard/returns",
+      },
+    ],
+  },
+  {
+    title: "Customer Insights",
+    links: [
+      {
+        title: "Customer Profiles",
+        /* icon: UserLine.src, */
+        path: "/dashboard/customers",
+      },
+      {
+        title: "Feedback",
+        /* icon: UserLine.src, */
+        path: "/dashboard/feedback",
+      },
+    ],
+  },
+  {
+    title: "Marketing",
+    links: [
+      {
+        title: "Campaigns",
+        /* icon: UserLine.src, */
+        path: "/dashboard/campaigns",
+      },
+    ],
+  },
+  {
+    title: "Reporting",
+    links: [
+      {
+        title: "Sales Reports",
+        /* icon: UserLine.src, */
+        path: "/dashboard/sales-reports",
+      },
+      {
+        title: "Performance Metrics",
+        /* icon: UserLine.src, */
+        path: "/dashboard/performance",
       },
     ],
   },

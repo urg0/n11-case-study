@@ -27,6 +27,14 @@ const DashboardNavBar = () => {
         <img src={Logo} alt="logo" className={styles.logo} />
       </div>
       <nav className={styles.navigationBar}>
+        <div className={styles.overviewNav}>
+          <DashboardLink
+            key="dashboard"
+            title="Overview"
+            icon={getIconPath("mail")}
+            path="/dashboard"
+          />
+        </div>
         {DASHBOARD_NAVIGATION.map(({ title, links }) => (
           <React.Fragment key={title}>
             <h2 className={styles.title}>{title}</h2>

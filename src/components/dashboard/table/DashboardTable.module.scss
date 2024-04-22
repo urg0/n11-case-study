@@ -1,0 +1,60 @@
+.gridTable {
+  width: 95%;
+  align-self: center;
+  border-collapse: collapse;
+
+  .companyLogo {
+    margin-right: 8px;
+    border-radius: 50%;
+    border: 1px solid #e2e4e9;
+  }
+  .fundingStage {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #0a0d14;
+    padding: 0 2px;
+    border: 1px solid #e2e4e9;
+    border-radius: 16px;
+    background-color: #fff;
+    padding-left: 8px;
+    width: 52%;
+    .icon {
+      margin-bottom: 3px;
+      margin-right: 3px;
+    }
+  }
+
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+  }
+  tr {
+    cursor: pointer;
+  }
+  tr:hover {
+    background-color: #eeecec;
+    .fundingStage {
+      background-color: #e2e4e9;
+    }
+  }
+
+  th {
+    background-color: #fff;
+    border: 1px solid #e2e4e9;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #0a0d14;
+  }
+
+  td {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #0a0d14;
+  }
+}
