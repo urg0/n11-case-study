@@ -8,14 +8,22 @@
   border-bottom: 1.5px solid #e2e4e9;
   .wrapper {
     display: flex;
+    align-items: center;
     .icon {
       width: 32px;
       height: 32px;
+      fill: #6936f5;
+      margin-right: 8px;
     }
     .header {
       font-size: 16px;
       font-weight: 500;
       color: #0a0d14;
     }
+  }
+  .welcomeText {
+    color: #0a0d14;
+    font-weight: 500;
+    font-size: 17px;
   }
 }

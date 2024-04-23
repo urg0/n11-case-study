@@ -34,7 +34,7 @@ const DashboardNavBar = () => {
           <DashboardLink
             key="dashboard"
             title="Overview"
-            icon={getIconPath("mail")}
+            icon={getIconPath("overview")}
             path="/dashboard"
           />
         </div>
@@ -45,7 +45,7 @@ const DashboardNavBar = () => {
               <DashboardLink
                 key={title}
                 title={title}
-                icon={getIconPath("mail")}
+                icon={icon}
                 path={path}
               />
             ))}

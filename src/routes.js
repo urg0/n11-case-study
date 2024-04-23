@@ -1,14 +1,18 @@
-import { useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import AuthenticatedRoute from "@components/authenticated-route/AuthenticatedRoute";
 import AuthRedirect from "@components/auth-redirect/AuthRedirect";
 
 import Login from "@pages/auth/login/Login";
 import ErrorPage from "@pages/404/ErrorPage";
 import Dashboard from "@pages/dashboard/Dashboard";
-import Inventory from "@pages/dashboard/product-management/inventory/Inventory";
+import CustomerProfiles from "@pages/dashboard/customer-insights/customer-profiles/CustomerProfiles";
 
 export const AppRouter = () => {
   const elements = useRoutes([
+    {
+      path: "/",
+      element: <Navigate to="/login" replace />,
+    },
     {
       path: "/dashboard",
       element: <AuthenticatedRoute />,
@@ -19,8 +23,8 @@ export const AppRouter = () => {
           element: <Dashboard />,
         },
         {
-          path: "inventory",
-          element: <Inventory />,
+          path: "customers",
+          element: <CustomerProfiles />,
         },
       ],
     },

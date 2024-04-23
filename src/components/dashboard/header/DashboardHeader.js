@@ -10,7 +10,7 @@ const DashboardHeader = ({ header, icon }) => {
         <ReactSVG src={icon} className={styles.icon} />
         <h2 className={styles.header}>{header}</h2>
       </div>
-      <div>Welcome back, Ulaş!</div>
+      <div className={styles.welcomeText}>Welcome back, Ulaş!</div>
     </div>
   );
 };

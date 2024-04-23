@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { useQuery } from "@tanstack/react-query";
 
+import { getIconPath } from "@utils/utils.service";
+
 import DashboardLayout from "@layouts/dashboard/DashboardLayout";
 import DashboardTable from "@components/dashboard/table/DashboardTable";
 import DashboardActionBar from "@components/dashboard/table/action-bar/DashboardActionBar";
@@ -19,7 +21,7 @@ const fetchProjects = async (page, perPage, filter = "") => {
   return filteredData.slice(startIndex, endIndex);
 };
 
-const Inventory = () => {
+const CustomerProfiles = () => {
   const [searchInput, setSearchInput] = useState("");
   const [page, setPage] = useState(1);
   const perPage = 10;
@@ -40,7 +42,7 @@ const Inventory = () => {
   };
 
   return (
-    <DashboardLayout header="Inventory">
+    <DashboardLayout header="Costumer Profiles" icon={getIconPath("file-user")}>
       <DashboardActionBar setSearchInput={handleSearchInput} />
       <DashboardTable
         applications={projects || []}
@@ -61,4 +63,4 @@ const Inventory = () => {
   );
 };
 
-export default Inventory;
+export default CustomerProfiles;

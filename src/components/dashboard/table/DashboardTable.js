@@ -71,7 +71,7 @@ const InvestmentTable = ({
                   {application.status === "Tamamlandı" ? (
                     <>
                       <ReactSVG
-                        src={getIconPath("mail")}
+                        src={getIconPath("check")}
                         className={styles.icon}
                       />
                       <span>Tamamlandı</span>
@@ -79,7 +79,7 @@ const InvestmentTable = ({
                   ) : (
                     <>
                       <ReactSVG
-                        src={getIconPath("mail")}
+                        src={getIconPath("cross")}
                         className={styles.icon}
                       />
                       <span>Bekliyor</span>
@@ -89,12 +89,19 @@ const InvestmentTable = ({
               </td>
               <td>
                 <span className={styles.fundingStage}>
-                  {numberFormatter(application.tutar)}₺
+                  <ReactSVG
+                    src={getIconPath("money")}
+                    className={styles.icon}
+                  />
+                  {numberFormatter(application.tutar)}$
                 </span>
               </td>
               <td>
                 <span className={styles.fundingStage}>
-                  <ReactSVG src={getIconPath("mail")} className={styles.icon} />
+                  <ReactSVG
+                    src={getIconPath("calendar")}
+                    className={styles.icon}
+                  />
                   {new Date(application.createdAt).toLocaleDateString("tr-TR", {
                     timeZone: "Europe/Istanbul",
                     year: "numeric",

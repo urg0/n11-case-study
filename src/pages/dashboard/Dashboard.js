@@ -11,29 +11,37 @@ import {
   polarAreaChartData,
 } from "@constants/dummy-data/charts";
 import Chart from "@components/charts/Chart";
+
 import { getIconPath } from "@utils/utils.service/";
 
 import styles from "./Dashboard.module.scss";
 
 const Dashboard = () => {
   return (
-    <DashboardLayout header="Dashboard" icon={getIconPath("user2")}>
+    <DashboardLayout header="Dashboard" icon={getIconPath("overview")}>
       <div className={styles.contentContainer}>
-        {DUMMY_INFO_CARD_DATA.map(({ title, amount, change }) => {
-          return <InfoCard title={title} amount={amount} change={change} />;
+        {DUMMY_INFO_CARD_DATA.map(({ title, amount, change, icon }) => {
+          return (
+            <InfoCard
+              title={title}
+              amount={amount}
+              change={change}
+              icon={icon}
+            />
+          );
         })}
       </div>
       <div className={styles.chartWrapper}>
         <div className={styles.chartContainer}>
           <div className={styles.wrapper}>
-            <Chart type="line" data={lineChartData} height={250} width={600} />
+            <Chart type="line" data={lineChartData} height={250} width={700} />
             <div className={styles.flex}>
-              <Chart type="pie" data={pieChartData} height={120} width={180} />
+              <Chart type="pie" data={pieChartData} height={120} width={120} />
               <Chart
                 type="polarArea"
                 data={polarAreaChartData}
                 height={200}
-                width={300}
+                width={200}
               />
             </div>
           </div>

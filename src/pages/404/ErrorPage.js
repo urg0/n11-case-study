@@ -1,7 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
+import Error from "@assets/images/404.png";
+
+import styles from "./ErrorPage.module.scss";
 
 const ErrorPage = () => {
-  return <div>ErrorPage</div>;
+  const navigate = useNavigate();
+
+  return (
+    <div className={styles.container}>
+      <img src={Error} alt="404" />
+      <h1 className={styles.errorMessage}>Something went wrong!</h1>
+      <button className={styles.navigate} onClick={() => navigate("/login")}>
+        Try Again
+      </button>
+    </div>
+  );
 };
 
 export default ErrorPage;

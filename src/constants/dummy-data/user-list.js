@@ -1,4 +1,4 @@
-import Memoji from "@assets/images/startupfon-purple.jpg";
+import Memoji from "@assets/images/memoji.png";
 
 export const DUMMY_USER_LIST = [
   {

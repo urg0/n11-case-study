@@ -1,10 +1,44 @@
+import { getIconPath } from "@utils/utils.service";
+
 export const DASHBOARD_NAVIGATION = [
+  {
+    title: "Customer Insights",
+    links: [
+      {
+        title: "Customer Profiles",
+        icon: getIconPath("file-user"),
+        path: "/dashboard/customers",
+      },
+      {
+        title: "Feedback",
+        /* icon: UserLine.src, */
+        path: "/dashboard/feedback",
+      },
+    ],
+  },
+
+  {
+    title: "Order Management",
+    links: [
+      {
+        title: "Recent Orders",
+        /* icon: UserLine.src, */
+        path: "/dashboard/recent-orders",
+      },
+      {
+        title: "Returns",
+        /* icon: UserLine.src, */
+        path: "/dashboard/returns",
+      },
+    ],
+  },
+
   {
     title: "Product Management",
     links: [
       {
         title: "Inventory",
-        /* icon: UserLine.src, */
+        /* icon: getIconPath("file-user"), */
         path: "/dashboard/inventory",
       },
       {
@@ -21,36 +55,6 @@ export const DASHBOARD_NAVIGATION = [
         title: "Best Sellers",
         /* icon: UserLine.src, */
         path: "/dashboard/best-sellers",
-      },
-    ],
-  },
-  {
-    title: "Order Management",
-    links: [
-      {
-        title: "Recent Orders",
-        /* icon: UserLine.src, */
-        path: "/dashboard/recent-orders",
-      },
-      {
-        title: "Returns",
-        /* icon: UserLine.src, */
-        path: "/dashboard/returns",
-      },
-    ],
-  },
-  {
-    title: "Customer Insights",
-    links: [
-      {
-        title: "Customer Profiles",
-        /* icon: UserLine.src, */
-        path: "/dashboard/customers",
-      },
-      {
-        title: "Feedback",
-        /* icon: UserLine.src, */
-        path: "/dashboard/feedback",
       },
     ],
   },
