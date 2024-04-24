@@ -6,7 +6,7 @@ import { getIconPath } from "@utils/utils.service/";
 import styles from "./DashboardTable.module.scss";
 
 const numberFormatter = (num) => {
-  const numStr = num.toString().replace(/\./g, "");
+  const numStr = num?.toString().replace(/\./g, "");
   return numStr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };
 
@@ -56,25 +56,25 @@ const DashboardTable = ({
                 <div className={styles.profileContainer}>
                   <img
                     className={styles.companyLogo}
-                    src={application.investorProfile?.profilePhoto}
+                    src={application.avatar}
                     alt="company-logo"
                     width={36}
                     height={36}
                   />
-                  {`${application.investorProfile.name} ${application.investorProfile.surname}`}
+                  {application.name}
                 </div>
               </td>
-              <td>{application.projectID}</td>
-              <td>{application.sektör}</td>
+              <td>{application.id}</td>
+              <td>{application.productCategory}</td>
               <td>
                 <span className={styles.fundingStage}>
-                  {application.status === "Tamamlandı" ? (
+                  {application.status ? (
                     <>
                       <ReactSVG
                         src={getIconPath("check")}
                         className={styles.icon}
                       />
-                      <span>Tamamlandı</span>
+                      <span>Completed</span>
                     </>
                   ) : (
                     <>
@@ -82,7 +82,7 @@ const DashboardTable = ({
                         src={getIconPath("cross")}
                         className={styles.icon}
                       />
-                      <span>Bekliyor</span>
+                      <span>No Approval</span>
                     </>
                   )}
                 </span>
@@ -93,7 +93,7 @@ const DashboardTable = ({
                     src={getIconPath("money")}
                     className={styles.icon}
                   />
-                  {numberFormatter(application.tutar)}$
+                  {numberFormatter(application.orderAmount)}$
                 </span>
               </td>
               <td>

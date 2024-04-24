@@ -8,12 +8,6 @@ const InfoCard = ({ title, amount, change, icon }) => {
   const changeClass =
     change.charAt(0) === "-" ? styles.negative : styles.positive;
 
-  if (change.charAt(0) === "-") {
-    console.log("negative");
-  } else {
-    console.log("posit");
-  }
-
   return (
     <div className={changeClass}>
       <ReactSVG src={icon} className={styles.icon} />

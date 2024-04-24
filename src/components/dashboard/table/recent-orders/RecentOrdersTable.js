@@ -1,9 +1,11 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
-import { getIconPath } from "@utils/utils.service";
+
+import { getIconPath, formatDate } from "@utils/utils.service";
+
 import styles from "./RecentOrdersTable.module.scss";
 
-const RecentOrdersTables = ({
+const RecentOrdersTable = ({
   applications,
   headers,
   page,
@@ -11,18 +13,12 @@ const RecentOrdersTables = ({
   totalPages,
   isLoading,
 }) => {
-  const formatDate = (dateString) => {
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    return new Date(dateString).toLocaleDateString("en-US", options);
-  };
-
   const renderPagination = () => {
     let pages = [];
     for (let i = 1; i <= totalPages; i++) {
       pages.push(
         <button
           key={i}
-          disabled={page === i || isLoading}
           onClick={() => setPage(i)}
           className={page === i ? styles.activePage : styles.pageNumbers}
         >
@@ -50,34 +46,35 @@ const RecentOrdersTables = ({
               <td>
                 <div className={styles.profileContainer}>
                   <img
-                    src={order.profilePhoto}
+                    src={order.avatar}
                     alt="Profile"
                     width={32}
                     height={32}
+                    className={styles.customarImage}
                   />
-                  {order.customerName}
+                  {order.name}
                 </div>
               </td>
               <td>{order.product}</td>
               <td>{order.amount}</td>
               <td>{formatDate(order.orderDate)}</td>
               <td className={styles.shippingStatusContainer}>
-                {order.shippingStatus}
-                {order.shippingStatus === "Shipped" ? (
-                  <ReactSVG
-                    src={getIconPath("check")}
-                    className={styles.icon}
-                  />
-                ) : order.shippingStatus === "Processing" ? (
-                  <ReactSVG
-                    src={getIconPath("clock")}
-                    className={styles.icon}
-                  />
+                {order.shippingStatus ? (
+                  <>
+                    <span>Delivered</span>
+                    <ReactSVG
+                      src={getIconPath("check")}
+                      className={styles.icon}
+                    />
+                  </>
                 ) : (
-                  <ReactSVG
-                    src={getIconPath("cross")}
-                    className={styles.icon}
-                  />
+                  <>
+                    <span>Shipping</span>
+                    <ReactSVG
+                      src={getIconPath("clock")}
+                      className={styles.icon}
+                    />
+                  </>
                 )}
               </td>
             </tr>
@@ -86,16 +83,16 @@ const RecentOrdersTables = ({
       </table>
       <div className={styles.paginationContainer}>
         <button
-          onClick={() => setPage((old) => Math.max(old - 1, 1))}
-          disabled={page === 1}
+          onClick={() => setPage((prevPage) => prevPage - 1)}
+          disabled={page === 1 || isLoading}
           className={styles.paginationButton}
         >
           {"<"}
         </button>
         {renderPagination()}
         <button
-          onClick={() => setPage((old) => Math.min(old + 1, totalPages))}
-          disabled={page === totalPages || applications?.length < 10}
+          onClick={() => setPage((prevPage) => prevPage + 1)}
+          disabled={page === totalPages || isLoading}
           className={styles.paginationButton}
         >
           {">"}
@@ -105,4 +102,4 @@ const RecentOrdersTables = ({
   );
 };
 
-export default RecentOrdersTables;
+export default RecentOrdersTable;

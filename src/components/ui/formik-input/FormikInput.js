@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactSVG } from "react-svg";
 
 import { getIconPath } from "@utils/utils.service";
