@@ -1,6 +1,10 @@
-# n11-case-study (e-commerce dashboard)
+<img src="https://github.com/urg0/n11-case-study/assets/81859377/23fe729e-f131-41c7-b7d1-308ce4ae10a1" width="150" height="100">
 
-## author: Ulaş Rotinda Güler
+# n11-case-study
+
+### author: Ulaş Rotinda Güler
+
+## [ulasrotindaguler.com](https://www.ulasrotindaguler.com/)
 
 This project is a demo e-commerce Dashboard. The project exchanges data using a mock API created by json-server. All data within the project is provided by the mock API.
 
