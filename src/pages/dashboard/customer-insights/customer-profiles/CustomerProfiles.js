@@ -59,6 +59,7 @@ const CustomerProfiles = () => {
       <DashboardActionBar
         handleSearchInput={handleSearchInput}
         setLastPage={setLastPage}
+        addUser={true}
       />
       {isLoading ? (
         <div className="spinner-container">

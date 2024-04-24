@@ -17,6 +17,7 @@ const DashboardActionBar = ({
   activeView,
   handleSearchInput,
   setLastPage,
+  addUser = false,
 }) => {
   const [createUserModal, setCreateUserModal] = useState(false);
 
@@ -55,13 +56,15 @@ const DashboardActionBar = ({
           />
         </div>
       */}
-          <button
-            className={styles.addButton}
-            onClick={() => setCreateUserModal(true)}
-          >
-            <ReactSVG src={getIconPath("add")} className={styles.addIcon} />
-            <span>Add user</span>
-          </button>
+          {addUser && (
+            <button
+              className={styles.addButton}
+              onClick={() => setCreateUserModal(true)}
+            >
+              <ReactSVG src={getIconPath("add")} className={styles.addIcon} />
+              <span>Add user</span>
+            </button>
+          )}
         </div>
         {children}
       </div>
