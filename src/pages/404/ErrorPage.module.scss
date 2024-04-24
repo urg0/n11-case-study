@@ -7,25 +7,19 @@
   background-color: #541d87;
 }
 
-.errorMessage {
-  font-size: 24px;
-  color: #541d87;
-  margin-top: 12px;
-}
-
 .navigate {
-  margin-top: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 400;
   color: #fff;
   padding: 16px;
   border: 1px solid #541d87;
   background-color: #541d87;
-  border-radius: 16px;
+  border-radius: 8px;
   border: 1px solid #fff;
+  margin-top: 20px;
   cursor: pointer;
   &:hover {
     background-color: #5c2095;

@@ -7,12 +7,14 @@ import { COOKIES } from "@utils/cookies.service";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import FormikInput from "@components/ui/formik-input/FormikInput";
 
-import { EMAIL_REGEX } from "@constants/regex";
+import FormikInput from "@components/ui/formik-input/FormikInput";
+import PasswordRequirements from "@components/ui/password-requirements/PassowordRequirements";
+
+import { EMAIL_REGEX, PASSWORD_REGEX } from "@constants/regex";
 import { getIconPath } from "@utils/utils.service";
 
-import styles from "./Login.module.scss";
+import styles from "./Register.module.scss";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,7 +32,7 @@ const Login = () => {
         .matches(EMAIL_REGEX, "Invalid Email address"),
       password: Yup.string()
         .required("Password is required")
-        .min(8, "Invalid Password"),
+        .matches(PASSWORD_REGEX, "Password must match the requirements"),
     }),
     onSubmit: () => {
       CookieService.setCookie(COOKIES.AUTH_TOKEN, "your_auth_token_here");
@@ -50,7 +52,7 @@ const Login = () => {
             <div className={styles.iconContainer}>
               <ReactSVG src={getIconPath("user")} className={styles.userIcon} />
             </div>
-            <p className={styles.title}>Login to your account</p>
+            <p className={styles.title}>Register for a New Account</p>
           </div>
           <form onSubmit={formik.handleSubmit} className={styles.loginBody}>
             <div>
@@ -73,6 +75,7 @@ const Login = () => {
                 showPassword={showPassword}
                 toggleShowPassword={toggleShowPassword}
               />
+              <PasswordRequirements password={formik.values.password} />
             </div>
             <div className={styles.loginButtonContainer}>
               <button
@@ -80,14 +83,14 @@ const Login = () => {
                 disabled={!formik.isValid}
                 className={styles.loginButton}
               >
-                Giriş Yap
+                Register
               </button>
             </div>
           </form>
           <div className={styles.routeToRegister}>
-            <span>Do not have an account?</span>
-            <Link to="/register" className={styles.register}>
-              Register
+            <span>Already have an account?</span>
+            <Link to="/login" className={styles.register}>
+              Login
             </Link>
           </div>
         </div>

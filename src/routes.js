@@ -7,6 +7,7 @@ import ErrorPage from "@pages/404/ErrorPage";
 import Dashboard from "@pages/dashboard/Dashboard";
 import CustomerProfiles from "@pages/dashboard/customer-insights/customer-profiles/CustomerProfiles";
 import RecentOrders from "@pages/dashboard/order-management/recent-orders/RecentOrders";
+import Register from "@pages/auth/register/Register";
 
 export const AppRouter = () => {
   const elements = useRoutes([
@@ -40,6 +41,16 @@ export const AppRouter = () => {
         {
           path: "",
           element: <Login />,
+        },
+      ],
+    },
+    {
+      path: "/register",
+      element: <AuthRedirect />,
+      children: [
+        {
+          path: "",
+          element: <Register />,
         },
       ],
     },
