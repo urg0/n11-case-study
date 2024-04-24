@@ -39,6 +39,9 @@ const RecentOrdersTable = ({
             ))}
           </tr>
         </thead>
+        {applications?.length === 0 && (
+          <div className={styles.userNotFound}>No orders found. Misspell?</div>
+        )}
         <tbody>
           {applications.map((order, index) => (
             <tr key={index}>

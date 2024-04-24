@@ -15,23 +15,23 @@ const DashboardActionBar = ({
   toggleViewList,
   toggleViewGrid,
   activeView,
-  setSearchInput,
+  handleSearchInput,
 }) => {
   return (
     <div className={styles.actionBarContainer}>
-      {/* <div className={styles.actions}>
+      <div className={styles.actions}>
         <div className={styles.searchBar}>
-          <ReactSVG src={getIconPath("mail")} className={styles.searchIcon} />
+          <ReactSVG src={getIconPath("search")} className={styles.searchIcon} />
           <input
             type="text"
-            placeholder="Arama yapın.."
+            placeholder="Search..."
             className={styles.searchInput}
             id="searchBarInput"
-            onChange={(e) => setSearchInput(e.target.value)}
+            onChange={handleSearchInput}
           />
         </div>
 
-        <div className={styles.layoutSwitcher}>
+        {/* <div className={styles.layoutSwitcher}>
           <ReactSVG
             onClick={toggleViewList}
             src={getIconPath("mail")}
@@ -50,8 +50,8 @@ const DashboardActionBar = ({
         <button className={styles.addButton}>
           <ReactSVG src={getIconPath("mail")} className={styles.addIcon} />
           <span>Yeni Ekle</span>
-        </button>
-      </div> */}
+        </button> */}
+      </div>
       {children}
     </div>
   );

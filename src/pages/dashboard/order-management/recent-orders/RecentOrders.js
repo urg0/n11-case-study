@@ -43,9 +43,14 @@ const RecentOrders = () => {
   const orders = orderData?.data || [];
   const totalPages = orderData?.totalPages || 0;
 
+  const handleSearchInput = (e) => {
+    setPage(1);
+    setSearchInput(e.target.value);
+  };
+
   return (
     <DashboardLayout header="Recent Orders" icon={getIconPath("shopping")}>
-      <DashboardActionBar setSearchInput={setSearchInput} />
+      <DashboardActionBar handleSearchInput={handleSearchInput} />
       {isLoading ? (
         <div className="spinner-container">
           <div className="spinner"></div>

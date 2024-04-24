@@ -51,7 +51,7 @@ const CustomerProfiles = () => {
 
   return (
     <DashboardLayout header="Customer Profiles" icon={getIconPath("file-user")}>
-      <DashboardActionBar setSearchInput={handleSearchInput} />
+      <DashboardActionBar handleSearchInput={handleSearchInput} />
       {isLoading ? (
         <div className="spinner-container">
           <div className="spinner"></div>

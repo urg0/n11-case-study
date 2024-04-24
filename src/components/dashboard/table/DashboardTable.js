@@ -44,6 +44,9 @@ const DashboardTable = ({
               <th key={index}>{heading}</th>
             ))}
           </tr>
+          {applications?.length === 0 && (
+            <div className={styles.userNotFound}>No users found. Misspell?</div>
+          )}
         </thead>
 
         <tbody>
@@ -68,7 +71,7 @@ const DashboardTable = ({
               <td>{application.productCategory}</td>
               <td>
                 <span className={styles.fundingStage}>
-                  {application.status ? (
+                  {application.paymentStatus ? (
                     <>
                       <ReactSVG
                         src={getIconPath("check")}
