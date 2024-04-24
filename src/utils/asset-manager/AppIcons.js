@@ -18,6 +18,7 @@ import FileUser from "@assets/icons/file-user.svg";
 import LineChart from "@assets/icons/line-chart.svg";
 import Clock from "@assets/icons/time-fill.svg";
 import Search from "@assets/icons/search.svg";
+import Add from "@assets/icons/add.svg";
 
 class AppIcons {
   static GetIcon(type) {
@@ -62,6 +63,8 @@ class AppIcons {
         return Clock;
       case "search":
         return Search;
+      case "add":
+        return Add;
       default:
         return null;
     }

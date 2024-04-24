@@ -7,6 +7,7 @@ import { getIconPath } from "@utils/utils.service";
 import DashboardLayout from "@layouts/dashboard/DashboardLayout";
 import DashboardTable from "@components/dashboard/table/DashboardTable";
 import DashboardActionBar from "@components/dashboard/table/action-bar/DashboardActionBar";
+import { Toaster } from "react-hot-toast";
 
 const fetchProfiles = async (page, perPage, filter = "") => {
   const orders = await fetchData(`${eventsUrl}/e-commerce-api`);
@@ -41,6 +42,10 @@ const CustomerProfiles = () => {
     },
   });
 
+  const setLastPage = () => {
+    setPage(totalPages);
+  };
+
   const users = userData?.data || [];
   const totalPages = userData?.totalPages || 0;
 
@@ -51,7 +56,10 @@ const CustomerProfiles = () => {
 
   return (
     <DashboardLayout header="Customer Profiles" icon={getIconPath("file-user")}>
-      <DashboardActionBar handleSearchInput={handleSearchInput} />
+      <DashboardActionBar
+        handleSearchInput={handleSearchInput}
+        setLastPage={setLastPage}
+      />
       {isLoading ? (
         <div className="spinner-container">
           <div className="spinner"></div>
@@ -73,6 +81,7 @@ const CustomerProfiles = () => {
           isLoading={isLoading}
         />
       )}
+      <Toaster />
     </DashboardLayout>
   );
 };

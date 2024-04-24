@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { useState } from "react";
 import { ReactSVG } from "react-svg";
 
 import { getIconPath } from "@utils/utils.service/";
 
 import styles from "./DashboardActionBar.module.scss";
+import CreateUserModal from "../../../ui/create-user-modal/CreateUserModal";
 
 const DashboardActionBar = ({
   icon,
@@ -16,22 +16,29 @@ const DashboardActionBar = ({
   toggleViewGrid,
   activeView,
   handleSearchInput,
+  setLastPage,
 }) => {
-  return (
-    <div className={styles.actionBarContainer}>
-      <div className={styles.actions}>
-        <div className={styles.searchBar}>
-          <ReactSVG src={getIconPath("search")} className={styles.searchIcon} />
-          <input
-            type="text"
-            placeholder="Search..."
-            className={styles.searchInput}
-            id="searchBarInput"
-            onChange={handleSearchInput}
-          />
-        </div>
+  const [createUserModal, setCreateUserModal] = useState(false);
 
-        {/* <div className={styles.layoutSwitcher}>
+  return (
+    <>
+      <div className={styles.actionBarContainer}>
+        <div className={styles.actions}>
+          <div className={styles.searchBar}>
+            <ReactSVG
+              src={getIconPath("search")}
+              className={styles.searchIcon}
+            />
+            <input
+              type="text"
+              placeholder="Search..."
+              className={styles.searchInput}
+              id="searchBarInput"
+              onChange={handleSearchInput}
+            />
+          </div>
+
+          {/* <div className={styles.layoutSwitcher}>
           <ReactSVG
             onClick={toggleViewList}
             src={getIconPath("mail")}
@@ -47,13 +54,23 @@ const DashboardActionBar = ({
             }`}
           />
         </div>
-        <button className={styles.addButton}>
-          <ReactSVG src={getIconPath("mail")} className={styles.addIcon} />
-          <span>Yeni Ekle</span>
-        </button> */}
+      */}
+          <button
+            className={styles.addButton}
+            onClick={() => setCreateUserModal(true)}
+          >
+            <ReactSVG src={getIconPath("add")} className={styles.addIcon} />
+            <span>Add user</span>
+          </button>
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
+      <CreateUserModal
+        setLastPage={setLastPage}
+        isOpen={createUserModal}
+        onClose={() => setCreateUserModal(false)}
+      />
+    </>
   );
 };
 

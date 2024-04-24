@@ -19,3 +19,23 @@ export async function fetchData(url) {
 
   return data;
 }
+
+export async function createCustomer(customerData) {
+  const url = `${eventsUrl}/e-commerce-api`;
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(customerData),
+  });
+
+  if (!response.ok) {
+    const error = new Error("An error occurred while creating the customer");
+    error.info = await response.json();
+    error.code = response.status;
+    throw error;
+  }
+
+  return response.json();
+}

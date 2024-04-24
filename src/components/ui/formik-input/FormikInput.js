@@ -15,6 +15,7 @@ const FormikInput = ({
   isPassword = false,
   showPassword,
   toggleShowPassword,
+  disabled = false,
 }) => {
   const showHideIcon = showPassword
     ? getIconPath("hide-password")
@@ -37,6 +38,7 @@ const FormikInput = ({
             onBlur={formik.handleBlur}
             value={formik.values[name]}
             placeholder={placeholder}
+            disabled={disabled}
           />
           {isPassword && (
             <ReactSVG

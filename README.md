@@ -6,7 +6,7 @@
 
 ## [ulasrotindaguler.com](https://www.ulasrotindaguler.com/)
 
-This project is a demo e-commerce Dashboard. The project exchanges data using a mock API created by json-server. All data within the project is provided by the mock API.
+This project is a demo e-commerce Dashboard. The project exchanges data using a mock. All data within the project is provided by the mock API.
 
 ## Setting Up the Development Environment
 
@@ -17,8 +17,6 @@ After downloading the project files, open the terminal in the directory where th
 ```bash
 yarn install
 ```
-
-This command will install the dependencies of the project. After the dependencies are installed, you can run the following command to bring up the project with the mock API:
 
 Then you can run the following command to bring up the project:
 
