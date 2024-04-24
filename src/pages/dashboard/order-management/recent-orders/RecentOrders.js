@@ -40,7 +40,7 @@ const RecentOrders = () => {
   };
 
   return (
-    <DashboardLayout header="Order Management" icon={getIconPath("box")}>
+    <DashboardLayout header="Recent Orders" icon={getIconPath("shopping")}>
       <DashboardActionBar setSearchInput={handleSearchInput} />
       <RecentOrdersTable
         applications={orders || []}
