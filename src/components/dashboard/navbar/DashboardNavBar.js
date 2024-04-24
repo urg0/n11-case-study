@@ -31,7 +31,12 @@ const DashboardNavBar = () => {
           className={styles.logoContainer}
           onClick={() => navigate("/dashboard")}
         >
-          <img src={Logo} alt="logo" className={styles.logo} />
+          <img
+            src={Logo}
+            alt="logo"
+            className={styles.logo}
+            onClick={() => navigate("/dashboard")}
+          />
         </div>
         <nav className={styles.navigationBar}>
           <div className={styles.overviewNav}>
