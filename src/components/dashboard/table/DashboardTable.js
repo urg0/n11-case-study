@@ -10,7 +10,7 @@ const numberFormatter = (num) => {
   return numStr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };
 
-const InvestmentTable = ({
+const DashboardTable = ({
   applications,
   headers,
   page,
@@ -56,7 +56,7 @@ const InvestmentTable = ({
                 <div className={styles.profileContainer}>
                   <img
                     className={styles.companyLogo}
-                    src={application.investorProfile.profilePhoto}
+                    src={application.investorProfile?.profilePhoto}
                     alt="company-logo"
                     width={36}
                     height={36}
@@ -135,4 +135,4 @@ const InvestmentTable = ({
   );
 };
 
-export default InvestmentTable;
+export default DashboardTable;

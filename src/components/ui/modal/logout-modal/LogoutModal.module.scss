@@ -1,0 +1,37 @@
+.logoutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .logoutMessage {
+    padding: 24px;
+    padding-top: 16px;
+  }
+  .buttonContainer {
+    align-self: flex-end;
+    justify-self: flex-end;
+    .cancelButton {
+      padding: 6px;
+      background-color: #fff;
+      border: 1px solid #434343;
+      border-radius: 8px;
+      margin-right: 8px;
+      cursor: pointer;
+      &:hover {
+        background-color: #ececec;
+      }
+    }
+    .logoutButton {
+      background-color: #fff;
+      border: 1px solid #df1c41;
+      color: #df1c41;
+      border-radius: 8px;
+      padding: 6px;
+      cursor: pointer;
+      &:hover {
+        background-color: #df1c41;
+        color: #fff;
+      }
+    }
+  }
+}

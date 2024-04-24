@@ -16,6 +16,7 @@ import Order from "@assets/icons/order.svg";
 import Shopping from "@assets/icons/shopping.svg";
 import FileUser from "@assets/icons/file-user.svg";
 import LineChart from "@assets/icons/line-chart.svg";
+import Clock from "@assets/icons/time-fill.svg";
 
 class AppIcons {
   static GetIcon(type) {
@@ -56,6 +57,8 @@ class AppIcons {
         return Shopping;
       case "line-chart":
         return LineChart;
+      case "clock":
+        return Clock;
       default:
         return null;
     }

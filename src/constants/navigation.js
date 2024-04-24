@@ -22,7 +22,7 @@ export const DASHBOARD_NAVIGATION = [
     links: [
       {
         title: "Recent Orders",
-        /* icon: UserLine.src, */
+        icon: getIconPath("shopping"),
         path: "/dashboard/recent-orders",
       },
       {

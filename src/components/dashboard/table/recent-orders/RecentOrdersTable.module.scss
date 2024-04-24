@@ -66,9 +66,17 @@
     color: #0a0d14;
   }
 }
+
+.shippingStatusContainer {
+  display: flex;
+  .icon {
+    margin-left: 4px;
+  }
+}
 .profileContainer {
   display: flex;
   align-items: center;
+  gap: 4px;
 }
 
 .paginationContainer {

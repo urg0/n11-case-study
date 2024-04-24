@@ -6,6 +6,7 @@ import Login from "@pages/auth/login/Login";
 import ErrorPage from "@pages/404/ErrorPage";
 import Dashboard from "@pages/dashboard/Dashboard";
 import CustomerProfiles from "@pages/dashboard/customer-insights/customer-profiles/CustomerProfiles";
+import RecentOrders from "@pages/dashboard/order-management/recent-orders/RecentOrders";
 
 export const AppRouter = () => {
   const elements = useRoutes([
@@ -25,6 +26,10 @@ export const AppRouter = () => {
         {
           path: "customers",
           element: <CustomerProfiles />,
+        },
+        {
+          path: "recent-orders",
+          element: <RecentOrders />,
         },
       ],
     },
