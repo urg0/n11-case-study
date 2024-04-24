@@ -6,7 +6,7 @@
 
 ## [ulasrotindaguler.com](https://www.ulasrotindaguler.com/)
 
-This project is a demo e-commerce Dashboard. The project exchanges data using a mock. All data within the project is provided by the mock API.
+This project is a demo e-commerce Dashboard. The project exchanges data using a mock API. All data within the project is provided by the mock API.
 
 ## Setting Up the Development Environment
 
@@ -35,6 +35,7 @@ After bringing up the project, you can see the project by going to [http://local
 - [Formik](https://formik.org/)
 - [Yup](https://github.com/jquense/yup)
 - [ESLint](https://eslint.org/)
+- React Hot Toast (https://react-hot-toast.com/)
 
 ## Project Structure
 
@@ -65,8 +66,6 @@ I was planned to write unit tests for the project. However, I could not write un
 
 #### UI and UX
 
-The application is designed to be used on mobile devices as well.
-
 #### Communication with API
 
 The `React Query` library was used for server-side state management. All API requests were made in the files located in the `services` folder. When API requests are successful or return an error, a notification is shown to the user. A library like `Axios` was not used as there was no need for any interceptor.
@@ -79,10 +78,6 @@ The application was routed using the `React Router Dom` library. These are pages
 - Register page
 - Dashboard page
 - Error page
-
-#### Title
-
-Page titles change dynamically according to the page content. Page titles were dynamically changed using the `react-helmet-async` library.
 
 ## Challenges I Encountered
 
